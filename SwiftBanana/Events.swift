@@ -53,16 +53,16 @@ class MappedEvent<Source, V where Source: Event>: Event {
     typealias Value = V
     
     let source: Source
-    let transform: Source.Value -> V
+    let transform: (Source.Time, Source.Value) -> (Source.Time, V)
     
     init(source: Source, transform: Source.Value -> V) {
         self.source = source
-        self.transform = transform
+        self.transform = { ($0.0, transform($0.1)) }
     }
 
     var occurrences: [(Source.Time,V)] {
         get {
-            return source.occurrences.map { ($0.0, self.transform($0.1)) }
+            return source.occurrences.map(transform)
         }
     }
 }
@@ -81,7 +81,7 @@ class FilteredEvent<Source where Source: Event>: Event {
     
     var occurrences: [(Source.Time, Source.Value)] {
         get {
-            return source.occurrences.flatMap(self.filter)
+            return source.occurrences.flatMap(filter)
         }
     }
 }
