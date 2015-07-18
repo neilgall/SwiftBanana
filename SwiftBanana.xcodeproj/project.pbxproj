@@ -10,6 +10,8 @@
 		28DD18B51B5A66D100DB2D2E /* SwiftBanana.h in Headers */ = {isa = PBXBuildFile; fileRef = 28DD18B41B5A66D100DB2D2E /* SwiftBanana.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		28DD18BC1B5A66D100DB2D2E /* SwiftBanana.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28DD18B11B5A66D100DB2D2E /* SwiftBanana.framework */; };
 		28DD18C11B5A66D100DB2D2E /* SwiftBananaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DD18C01B5A66D100DB2D2E /* SwiftBananaTests.swift */; };
+		28DD18CD1B5A66EA00DB2D2E /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DD18CB1B5A66EA00DB2D2E /* Events.swift */; };
+		28DD18CE1B5A66EA00DB2D2E /* Behaviours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DD18CC1B5A66EA00DB2D2E /* Behaviours.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		28DD18BB1B5A66D100DB2D2E /* SwiftBananaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftBananaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28DD18C01B5A66D100DB2D2E /* SwiftBananaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBananaTests.swift; sourceTree = "<group>"; };
 		28DD18C21B5A66D100DB2D2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28DD18CB1B5A66EA00DB2D2E /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		28DD18CC1B5A66EA00DB2D2E /* Behaviours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Behaviours.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				28DD18B41B5A66D100DB2D2E /* SwiftBanana.h */,
+				28DD18CB1B5A66EA00DB2D2E /* Events.swift */,
+				28DD18CC1B5A66EA00DB2D2E /* Behaviours.swift */,
 				28DD18B61B5A66D100DB2D2E /* Info.plist */,
 			);
 			path = SwiftBanana;
@@ -142,6 +148,7 @@
 		28DD18A81B5A66D100DB2D2E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Neil Gall";
 				TargetAttributes = {
@@ -193,6 +200,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28DD18CD1B5A66EA00DB2D2E /* Events.swift in Sources */,
+				28DD18CE1B5A66EA00DB2D2E /* Behaviours.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +316,7 @@
 		28DD18C61B5A66D100DB2D2E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -317,12 +327,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.neilgall.SwiftBanana;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		28DD18C71B5A66D100DB2D2E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
